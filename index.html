@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kendrick's Website</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    section { display: none; }
+    section.active { display: block; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My name is <span id="typewriter" class="typewriter">Kendrick Manchester</span></h1>
+  </header>
+
+  <nav class="horizontal-headings">
+    <button onclick="showSection('about')">About</button>
+    <button onclick="showSection('resume')">Resume</button>
+    <button onclick="showSection('projects')">Projects</button>
+  </nav>
+
+  <section id="about" class="active">
+    <h2>About Me</h2>
+    <p>My name is Kendrick Manchester. I am a Senior in Computer Science with a concentration in Software Engineering at Louisiana State University. I am currently seeking a Full-Time Entry Level position for Summer 2026. Throughout my time at LSU, I developed a passion for Artificial Intelligence, Machine Learning, and Deep Learning.</p>
+    <h3>Skills</h3>
+    <ul>
+      <li>Languages: Python, Java, C++, JavaScript, HTML/CSS, SQL, Kotlin, Dart, C</li>
+      <li>Frameworks: React, Node.js, Flutter, Firebase</li>
+      <li>Tools: GitHub, Android Studio, Visual Studio Code, OpenAI</li>
+    </ul>
+    <h3>Timeline</h3>
+    <ul>
+      <li>2024 — Launched AI Image Generator project blending art and automation</li>
+      <li>Fall 2024 — Precision Notes, Numerical Methods Final Project</li>
+      <li>March 2025 — PFT Scavenger Hunt</li>
+      <li>May 2025 — Golf App</li>
+      <li>June 2025 — AI Image Generator, Avatar: The Last Airbender WebScraper, Echo: Virtual Assistant</li>
+      <li>August 2025 — Master Chatbot (Our Lady of the Lake), Database Management Project, Machine Learning Project</li>
+    </ul>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>Download my resume <a href="kendrickm-resume.pdf" target="_blank">here</a>.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project">
+      <h3>Echo</h3>
+      <p>A modular Python-based assistant focused on interactive storytelling and user engagement.</p>
+    </div>
+    <div class="project">
+      <h3>AI Image Generator</h3>
+      <p>Created using HTML, CSS, and JavaScript, this image generation tool blends creative exploration with technical design.</p>
+    </div>
+    <div class="project">
+      <h3>Precision Notes</h3>
+      <p>A note-taking app built with Kotlin in Android Studio as part of a collaborative OOP class project.</p>
+    </div>
+    <div class="project">
+      <h3>Golf App</h3>
+      <p>An Android-based golf-themed planner designed with Flutter, offering users streamlined tracking and notes for gameplay strategy.</p>
+    </div>
+    <div class="project">
+      <h3>Patrick F. Taylor Hall Treasure Hunt</h3>
+      <p>Interactive campus scavenger hunt powered by Flutter, featuring embedded clues and location-based storytelling.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Curious about how any of these were built? <br>Reach out or check my <a href="kendrickm-resume.pdf">resume</a> for more.</p>
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+</body>
+</html>
