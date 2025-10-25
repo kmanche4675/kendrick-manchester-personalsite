@@ -1,31 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-  alert('Welcome to my website!');
+const cube = document.getElementById("cube");
 
-  const textElement = document.getElementById('typewriter');
-  const text = "Kendrick Manchester Jr.";
-  let index = 0;
-  let isDeleting = false;
+const clickOnSide = (side) => {
+  const activeSide = cube.dataset.side;
+  cube.classList.replace(`show-${activeSide}`, `show-${side}`);
+  cube.setAttribute("data-side", side);
+};
 
-  function typeEffect() {
-    if (!textElement) return; // safety check
-
-    if (!isDeleting) {
-      textElement.textContent = text.slice(0, index++);
-      if (index > text.length) {
-        isDeleting = true;
-        setTimeout(typeEffect, 1000); // pause before deleting
-        return;
-      }
-    } else {
-      textElement.textContent = text.slice(0, index--);
-      if (index < 0) {
-        isDeleting = false;
-        setTimeout(typeEffect, 500); // pause before retyping
-        return;
-      }
-    }
-    setTimeout(typeEffect, 75);
-  }
-
-  typeEffect(); // start animation
+document.querySelectorAll(".btn").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    const sideToTurn = e.target.dataset.side;
+    clickOnSide(sideToTurn);
+  })
 });
